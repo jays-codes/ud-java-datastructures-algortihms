@@ -2,6 +2,8 @@
 Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
 proj: datastructures
+- added jay's leetcode answer: LinkedList, findKthFromEnd(int); used 2 pointer
+solution; used junit
 - added jay's leetcode answer: LinkedList, hasLoop(); used Floyd's T&H also; used junit
 - added jay's leetcode answer: LinkedList, find middle node using Floyd's tortoise and hare algo
 - refactored LinkedList reverse(); another linkedlist reverse implementation (interation - for)
