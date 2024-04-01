@@ -217,6 +217,21 @@ public class LinkedListIntegers {
 			pointer = pointer.next;
 		} while (pointer != null);
 
+	}
+
+	public Node findMiddleNode() {
+		Node slowptr = head;
+		Node fastptr = head;
+		
+		while (fastptr!=null) {
+			if (fastptr==tail) {
+				return slowptr;
+			} else {
+				slowptr=slowptr.next;
+				fastptr=fastptr.next.next;
+			}
+		} 
+		return slowptr;
 	}	
 
 
