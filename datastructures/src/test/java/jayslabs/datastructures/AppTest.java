@@ -13,8 +13,17 @@ public class AppTest
      * Rigorous Test :-)
      */
     @Test
-    public void shouldAnswerWithTrue()
+    public void testllHasLoop()
     {
-        assertTrue( true );
+		LinkedListIntegers ll = new LinkedListIntegers(1);
+		ll.append(2);
+		ll.append(3);
+		ll.append(4);
+		ll.append(5);
+		ll.append(6);
+		ll.append(7);
+		ll.getTail().next=ll.findMiddleNode();
+		
+        assertTrue( ll.hasLoop() );
     }
 }

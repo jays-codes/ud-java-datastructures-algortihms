@@ -232,6 +232,22 @@ public class LinkedListIntegers {
 			}
 		} 
 		return slowptr;
+	}
+
+	public boolean hasLoop() {
+		Node slow = head;
+		Node fast = head;
+		
+		//no loop if only one element
+		if (slow==tail) return false;
+		
+		while (fast!=null) {
+			slow=slow.next;
+			fast=fast.next.next;
+			if (slow==fast) return true;
+		}
+		
+		return false;
 	}	
 
 
