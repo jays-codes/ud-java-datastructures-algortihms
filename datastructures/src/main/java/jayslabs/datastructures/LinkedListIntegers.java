@@ -176,18 +176,32 @@ public class LinkedListIntegers {
 	}
 
 	public void reverse() {
-		Node back = null;
-		Node current = head;
-		Node front = null;
+//		Node back = null;
+//		Node current = head;
+//		Node front = null;
+//		
+//		while(current!=null) {
+//			front = current.next;
+//			current.next = back;
+//			back = current;
+//			current=front;
+//		}
+//		
+//		head=tail;
 		
-		while(current!=null) {
-			front = current.next;
-			current.next = back;
-			back = current;
-			current=front;
-		}
-		
-		head=tail;
+        Node temp = head;
+        head=tail;
+        tail=temp;
+        
+        Node after=temp.next;
+        Node before = null;
+        
+        for (int i=0;i<count;i++){
+            after = temp.next;
+            temp.next=before;
+            before=temp;
+            temp=after;
+        }	
 	}
 	
 	public void printNodes() {
