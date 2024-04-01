@@ -248,6 +248,27 @@ public class LinkedListIntegers {
 		}
 		
 		return false;
+	}
+
+	public Node findKthFromEnd(int kth) {
+		
+		Node aha = head;
+		Node endpt = head;
+		
+        if (aha==null) return null;
+        
+        if (kth==1 && aha.next==null) return aha;
+		
+		for (int i=0;i<kth;i++) {
+			endpt=endpt.next;
+		}		
+		
+		while (endpt!=null) {
+			aha=aha.next;
+			endpt=endpt.next;
+		}
+		
+		return aha;
 	}	
 
 

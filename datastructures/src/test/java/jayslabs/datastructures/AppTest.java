@@ -10,7 +10,7 @@ import org.junit.Test;
 public class AppTest 
 {
     /**
-     * Rigorous Test :-)
+     * Test if LL has a loop
      */
     @Test
     public void testllHasLoop()
@@ -25,5 +25,25 @@ public class AppTest
 		ll.getTail().next=ll.findMiddleNode();
 		
         assertTrue( ll.hasLoop() );
+    }
+    
+    /**
+     * Find Kth from End in LL
+     */
+    @Test
+    public void testllFindKthFromEnd()
+    {
+		LinkedListIntegers ll = new LinkedListIntegers(112);
+		ll.append(452);
+		ll.append(323);
+		ll.append(894);
+		ll.append(53);
+		ll.append(61);
+		ll.append(87);
+		ll.printNodes();
+		int ix=7;
+		Node kth = ll.findKthFromEnd(7);
+		System.out.println("kth[" + ix + "]:"+ kth.getValue());
+        assertTrue( kth.getValue()==112 );
     }
 }
