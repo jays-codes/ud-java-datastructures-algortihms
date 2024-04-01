@@ -176,11 +176,6 @@ public class LinkedListIntegers {
 	}
 
 	public void reverse() {
-
-//		Node temp = head;
-//		head = tail;
-//		tail = temp;
-		
 		Node back = null;
 		Node current = head;
 		Node front = null;
@@ -193,21 +188,6 @@ public class LinkedListIntegers {
 		}
 		
 		head=tail;
-		
-		
-//		Node prev=null;
-//		Node curr=head;
-//		Node next=null;
-//
-//		
-//		
-//		while (curr.next!=null) {
-//			next = curr.next;
-//			curr.next = prev;
-//			prev = curr;
-//			curr=next;
-//		}
-		
 	}
 	
 	public void printNodes() {
