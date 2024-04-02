@@ -318,7 +318,19 @@ public class LinkedListIntegers {
 			curr=curr.next;
 		}
 		
-}	
+}
+
+	public int binaryToDecimal() {
+		int sum=0;
+
+		Node curr=head;
+		while (curr!=null) {
+			sum=sum*2;
+			sum = sum + curr.getValue();
+			curr=curr.next;
+		}
+		return sum;
+	}	
 
 
 

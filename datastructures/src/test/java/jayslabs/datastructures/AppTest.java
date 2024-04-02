@@ -90,4 +90,22 @@ public class AppTest
 
         assertTrue(true);
     }
+    
+    /**
+     * LL: Binary to Dec()
+     */
+    @Test
+    public void testLLBinaryToDec()
+    {
+		LinkedListIntegers ll = new LinkedListIntegers(1);
+		ll.append(1);
+		ll.append(0);
+		ll.append(1);
+		ll.append(1);
+		ll.append(1);
+		ll.printNodes();
+		int decVal = ll.binaryToDecimal();
+		System.out.println("decimal val:" + decVal);
+        assertTrue(true);
+    }
 }
