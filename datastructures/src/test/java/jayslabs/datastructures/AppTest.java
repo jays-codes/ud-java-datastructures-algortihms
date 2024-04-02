@@ -46,4 +46,25 @@ public class AppTest
 		System.out.println("kth[" + ix + "]:"+ kth.getValue());
         assertTrue( kth.getValue()==112 );
     }
+    
+    /**
+     * PartitionList(x)
+     */
+    @Test
+    public void testllPartitionList()
+    {
+		LinkedListIntegers ll = new LinkedListIntegers(11);
+		ll.append(3);
+		ll.append(8);
+		ll.append(5);
+		ll.append(10);
+		ll.append(2);
+		ll.append(1);
+		ll.printNodes();
+		int w=5;
+		ll.partitionList(w);
+		ll.printNodes();
+
+        assertTrue(true);
+    }
 }

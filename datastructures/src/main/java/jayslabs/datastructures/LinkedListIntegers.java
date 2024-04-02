@@ -269,6 +269,34 @@ public class LinkedListIntegers {
 		}
 		
 		return aha;
+	}
+
+	public void partitionList(int w) {
+		if (head==null) return;
+		
+		Node curr=head;
+
+		Node lthead=new Node(0);
+		Node gthead=new Node(0);
+
+		Node lt=lthead;
+		Node gt=gthead;
+		
+		while (curr!=null) {
+			if (curr.getValue()<w) {				
+				lt.next=curr;
+				lt=lt.next;				
+			} else {
+				gt.next=curr;
+				gt=gt.next;
+			}
+			curr=curr.next;
+		}
+		
+		gt.next=null;
+		
+		lt.next=gthead.next;
+		head=lthead.next;
 	}	
 
 
