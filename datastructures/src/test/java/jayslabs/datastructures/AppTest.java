@@ -67,4 +67,27 @@ public class AppTest
 
         assertTrue(true);
     }
+    
+    /**
+     * LL removeDuplicates()
+     */
+    @Test
+    public void testLLRemoveDuplicates()
+    {
+		LinkedListIntegers ll = new LinkedListIntegers(11);
+		ll.append(3);
+		ll.append(8);
+		ll.append(8);
+		ll.append(3);
+		ll.append(10);
+		ll.append(10);
+		ll.append(8);
+		ll.append(11);
+		ll.append(1);
+		ll.printNodes();
+		ll.removeDuplicates();
+		ll.printNodes();
+
+        assertTrue(true);
+    }
 }

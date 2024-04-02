@@ -6,6 +6,10 @@ public class Node {
 		this.value = value;
 		this.next = null;
 	}
+	@Override
+	public boolean equals(Object obj) {
+		return ((Node)obj).value==this.value;
+	}
 	public int getValue() {
 		return value;
 	}

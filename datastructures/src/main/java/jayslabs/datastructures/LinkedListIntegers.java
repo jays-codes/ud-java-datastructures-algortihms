@@ -1,5 +1,8 @@
 package jayslabs.datastructures;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class LinkedListIntegers {
 	private Node head;
 	private Node tail;
@@ -297,7 +300,25 @@ public class LinkedListIntegers {
 		
 		lt.next=gthead.next;
 		head=lthead.next;
-	}	
+	}
+
+	public void removeDuplicates() {
+		Set<Integer> values = new HashSet<Integer>();
+		Node curr=head;
+		Node prev=null;
+		
+		while (curr!=null) {
+			if (values.contains(curr.getValue())){
+				prev.next=curr.next;
+				count--;
+			} else {
+				values.add(curr.getValue());
+				prev=curr;
+			}
+			curr=curr.next;
+		}
+		
+}	
 
 
 
