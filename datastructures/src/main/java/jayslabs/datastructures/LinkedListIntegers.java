@@ -347,8 +347,9 @@ public class LinkedListIntegers {
 		}
 		
 		Node revPtr=s1.next;
-        Node temp = revPtr;
-        
+        Node temp = curr;
+
+		
         Node after=temp.next;
         Node before = null;
         
@@ -360,8 +361,10 @@ public class LinkedListIntegers {
         }	
 		
         s1.next=before;
-        revPtr.next = temp;
-		Node current = revPtr;
+        if (revPtr!=null)
+        	revPtr.next = temp;
+        else 
+        	curr.next=temp;
 		head=s1head.next;
 	}
 }

@@ -124,7 +124,7 @@ public class AppTest
 		ll.printNodes();
 //		ll.reverse();
 //		ll.printNodes();
-		ll.reverseBetween(2,5);
+		ll.reverseBetween(3,5);
 		ll.printNodes();
 
         assertTrue(true);
