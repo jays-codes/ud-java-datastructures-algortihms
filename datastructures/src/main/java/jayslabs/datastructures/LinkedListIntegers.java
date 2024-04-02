@@ -330,10 +330,38 @@ public class LinkedListIntegers {
 			curr=curr.next;
 		}
 		return sum;
-	}	
+	}
 
-
-
-
-
+	public void reverseBetween(int x, int y) {
+		
+		Node curr=head;
+		Node s1head = new Node(0);
+		Node s1 = s1head;
+		
+		int i=0;
+		while(i<x) {
+			s1.next=curr;
+			i++;
+			s1=s1.next;
+			curr=curr.next;
+		}
+		
+		Node revPtr=s1.next;
+        Node temp = revPtr;
+        
+        Node after=temp.next;
+        Node before = null;
+        
+        for (int j=0;j<=y-x;j++){
+            after = temp.next;
+            temp.next=before;
+            before=temp;
+            temp=after;
+        }	
+		
+        s1.next=before;
+        revPtr.next = temp;
+		Node current = revPtr;
+		head=s1head.next;
+	}
 }

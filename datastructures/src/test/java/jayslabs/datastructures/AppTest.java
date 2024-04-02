@@ -108,4 +108,25 @@ public class AppTest
 		System.out.println("decimal val:" + decVal);
         assertTrue(true);
     }
+    
+    /**
+     * reverseBetween(x,y)
+     */
+    @Test
+    public void testLLReverseBetween()
+    {
+		LinkedListIntegers ll = new LinkedListIntegers(1);
+		ll.append(2);
+		ll.append(3);
+		ll.append(4);
+		ll.append(5);
+		ll.append(6);
+		ll.printNodes();
+//		ll.reverse();
+//		ll.printNodes();
+		ll.reverseBetween(2,5);
+		ll.printNodes();
+
+        assertTrue(true);
+    }
 }
