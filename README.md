@@ -2,6 +2,7 @@
 Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
 proj: datastructures
+- DoublyLinkedList; Node with prev; append(), printNodes(), removeLast()
 - jay's leetcode answer: LinkedList, reverseBetween(); 1st and 2nd version
 - added jay's leetcode answer: LinkedList, binaryToDecimal(); 
 - added jay's leetcode answer: LinkedList, partitionList(int); used Dummy Nodes
