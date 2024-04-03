@@ -111,13 +111,13 @@ public class DoublyLinkedList {
 		
 		Node ptr=null;
 		if (idx<mid) {
-			System.out.println("from head...");
+			System.out.print(" - from head...");
 			ptr=head;
 			for (int i=0;i<idx;i++) {
 				ptr=ptr.next;
 			}
 		} else {
-			System.out.println("from tail...");
+			System.out.print(" - from tail...");
 			ptr=tail;
 			for (int i=length-1;i>idx;i--) {
 				ptr=ptr.prev;
@@ -136,6 +136,68 @@ public class DoublyLinkedList {
 		if (update==null) return false;
 		update.value=val;
 		return true;
+	}
+
+	public boolean insert(int ix, int val) {
+		System.out.println("insert()");
+
+		if (ix<0 || ix>length)
+			return false;
+		if (ix==length) {
+			append(val);
+			return true;
+		}
+		if (ix==0) {
+			prepend(val);
+			return true;
+		}
+
+		Node newNode = new Node(val);
+
+		Node back = get(ix-1);
+		Node front = back.next;
+		
+		back.next=newNode;
+		newNode.prev=back;
+		newNode.next=front;
+		front.prev=newNode;
+		
+		length++;
+		return true;
+	}
+
+	public Node remove(int ix) {
+		System.out.println("remove()");
+
+		if (ix<0 || ix>=length) {
+			return null;
+		}
+		if (ix==0) {
+			return removeFirst();
+		} 
+		if (ix==length-1) {
+			return removeLast();
+		}
+		
+//		Node remove = get(ix);
+//		Node back = remove.prev;
+//		Node front = remove.next;
+//		
+//		back.next=front;
+//		front.prev=back;
+//		remove.next=null;
+//		remove.prev=null;
+		
+		//improve space complexity
+		Node remove = get(ix);
+		
+		remove.prev.next=remove.next;
+		remove.next.prev=remove.prev;
+		remove.next=null;
+		remove.prev=null;
+		
+		length--;
+		return remove;
 	}
 	
 }

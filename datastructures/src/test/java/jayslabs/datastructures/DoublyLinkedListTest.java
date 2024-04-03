@@ -145,6 +145,49 @@ public class DoublyLinkedListTest {
 		dll.printNodes();
 		assertTrue(dll.set(9,11));
 		dll.printNodes();
-
+	}
+	
+    /**
+     * Insert() test
+     */
+	@Test
+	public void testDLLInsert() {
+		DoublyLinkedList dll = new DoublyLinkedList(1);
+		dll.append(2);
+		dll.append(3);
+		dll.append(4);
+		dll.append(5);
+		dll.append(6);
+		dll.append(7);
+		dll.printNodes();
+		dll.prepend(8);
+		dll.prepend(9);
+		dll.prepend(10);		
+		dll.printNodes();
+		assertTrue(dll.insert(8,12));
+		dll.printNodes();
+	}
+	
+    /**
+     * Remove() test
+     */
+	@Test
+	public void testDLLRemove() {
+		DoublyLinkedList dll = new DoublyLinkedList(1);
+		dll.append(2);
+		dll.append(3);
+		dll.append(4);
+		dll.append(5);
+		dll.append(6);
+		dll.append(7);
+		dll.printNodes();
+		dll.prepend(8);
+		dll.prepend(9);
+		dll.prepend(10);		
+		dll.printNodes();
+		Node removed = dll.remove(7);
+		assertTrue(removed.getValue()==5);
+		System.out.println("val:" + removed.getValue());
+		dll.printNodes();
 	}
 }
