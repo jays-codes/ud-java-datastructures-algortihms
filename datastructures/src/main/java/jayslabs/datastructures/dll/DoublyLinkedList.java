@@ -199,5 +199,53 @@ public class DoublyLinkedList {
 		length--;
 		return remove;
 	}
+
+	public void swapFirstAndLast() {
+		if (length<2) return;
+
+		int temp = head.value;
+		head.value=tail.value;
+		tail.value=temp;
+	}
+
+	public void reverse() {
+		if (length<2) return;
+		
+		Node ptr=head;
+		Node temp=null;
+		
+		while (ptr!=null) {
+			temp=ptr.prev;
+			ptr.prev=ptr.next;
+			ptr.next=temp;
+			ptr=ptr.prev;
+		}
+		
+		ptr=head;
+		head=tail;
+		tail=ptr;
+	}
+	
+	public void printNode(Node node) {
+		System.out.print("Node:" + node.value);
+	}
+	
+	public void printHead() {
+		if (length==0) {
+			System.out.println("count:" + length + "---------------");
+			System.out.println("no head found");
+			return;
+		}
+		System.out.println("head:" + head.getValue());
+	}
+
+	public void printTail() {
+		if (length==0) {
+			System.out.println("count:" + length + "---------------");
+			System.out.println("no tail foundd");
+			return;
+		}
+		System.out.println("tail:" + tail.getValue());
+	}
 	
 }

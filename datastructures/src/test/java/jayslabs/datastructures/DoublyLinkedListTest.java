@@ -190,4 +190,44 @@ public class DoublyLinkedListTest {
 		System.out.println("val:" + removed.getValue());
 		dll.printNodes();
 	}
+	
+    /**
+     * SwapFirstAndLast() test
+     */
+	@Test
+	public void testDLLSwapFirstAndLast() {
+		DoublyLinkedList dll = new DoublyLinkedList(1);
+		dll.append(2);
+		dll.append(3);
+		dll.append(4);
+		dll.append(5);
+		dll.append(6);
+		dll.append(7);
+		dll.printNodes();
+		dll.swapFirstAndLast();
+		assertTrue(true);
+		dll.printNodes();
+	}
+	
+    /**
+     * Reverse() test
+     */
+	@Test
+	public void testDLLReverse() {
+		DoublyLinkedList dll = new DoublyLinkedList(1);
+		dll.append(2);
+		dll.append(3);
+		dll.append(4);
+		dll.append(5);
+		dll.append(6);
+		dll.append(7);
+		dll.printNodes();
+		dll.printHead();
+		dll.printTail();
+		dll.reverse();
+		assertTrue(true);
+		dll.printNodes();
+		dll.printHead();
+		dll.printTail();
+	}
 }
