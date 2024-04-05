@@ -3,6 +3,14 @@ package jayslabs.datastructures.dll;
 import jayslabs.datastructures.dll.Node;
 
 public class DoublyLinkedList {
+	public Node getHead() {
+		return head;
+	}
+
+	public Node getTail() {
+		return tail;
+	}
+
 	private Node head;
 	private Node tail;
 	private int length;
@@ -208,7 +216,7 @@ public class DoublyLinkedList {
 		tail.value=temp;
 	}
 
-	public void reverse() {
+	public void reverseX() {
 		if (length<2) return;
 		
 		Node ptr=head;
@@ -225,6 +233,172 @@ public class DoublyLinkedList {
 		head=tail;
 		tail=ptr;
 	}
+
+	public void swapPairs() {
+
+		if (length<2) return;
+	
+		Node ptrMain = head;
+
+		Node dummy = new Node(0);
+		dummy.next=head;
+		Node beforeNode=dummy;
+		
+		Node nodeX;
+		Node nodeY;
+		Node rnode=null;
+		Node ptr=null;
+		
+		while (ptrMain!=null) {
+			nodeX=ptrMain;
+			nodeY=ptrMain.next;
+			
+			while (beforeNode.next!=nodeX) 
+				beforeNode=beforeNode.next;
+			
+			if (nodeY!=null) {
+				ptr = nodeY.next;					
+			} else {
+				rnode = reverseXY(nodeX,nodeY);
+				beforeNode.next=rnode;
+				rnode.prev=beforeNode;
+				break;
+			}
+			
+			//this is the key swapping part -  returned a reversed
+			//detached node
+			rnode = reverseXY(nodeX,nodeY);
+			
+			beforeNode.next=rnode;
+			rnode.prev=beforeNode;
+			while (rnode!=nodeX)
+			rnode=rnode.next;
+			
+			//has a segment after node
+			if (ptr!=null)	
+				rnode.next=ptr;
+			else //rnode is last segment
+				rnode.next=null;
+			
+			ptrMain=ptrMain.next;			
+		}
+		head = dummy.next;
+		head.prev=null;
+	}
+	
+	
+	public void reverse() {
+		reverseXYonce(head, tail);
+	}
+	
+	public Node reverseXY(Node nodeX, Node nodeY) {
+		
+		if (nodeY==null) {
+			return nodeX;
+		}
+		
+		if (nodeX.prev!=null)
+			nodeX.prev.next=null;
+		nodeX.prev=null;
+		
+		if (nodeY.next!=null)	
+			nodeY.next.prev=null;
+		nodeY.next=null;
+		
+		Node ptr = nodeX;	
+		while (ptr!=null && ptr.prev!=nodeY) {
+			swapNextandPrev(ptr);
+			ptr=ptr.prev;
+		}
+		
+		swapNodes(nodeX, nodeY); 
+		return nodeY;
+	}
+	
+	/**
+	 * reverses nodes, and the pointers - DOES NOT SWAP END NODES
+	 * version that does not use reverseXY(Node,Node):Node 
+	 **/
+//	public void reverseXYonce(Node nodeX, Node nodeY) {
+//		if (length<2) return;
+//		
+//		Node dummy = new Node(0);
+//		dummy.next=head;
+//		Node beforeNode=dummy;
+//		
+//		while (beforeNode.next!=nodeX) 
+//			beforeNode=beforeNode.next;
+//		
+//		Node ptr = beforeNode.next;	
+//		while (ptr!=null && ptr.prev!=nodeY) {
+//			swapNextandPrev(ptr);
+//			ptr=ptr.prev;
+//		}
+//		
+//		beforeNode.next=nodeY;
+//		while (nodeY!=nodeX)
+//		nodeY=nodeY.next;
+//
+//		if (ptr!=null) 
+//			nodeY.next=ptr;
+//		else
+//			nodeY.next=null;
+//
+//		tail=nodeY;
+//		head = dummy.next;
+//	}
+	
+	/**
+	 * reverses nodes, and the pointers - DOES NOT SWAP END NODES 
+	 **/
+	public void reverseXYonce(Node nodeX, Node nodeY) {
+		if (length<2) return;
+		
+		Node dummy = new Node(0);
+		dummy.next=head;
+		Node beforeNode=dummy;
+		
+		while (beforeNode.next!=nodeX) 
+			beforeNode=beforeNode.next;
+		
+		Node ptr = nodeY.next;	
+		
+		//this is the key swapping part -  returned a reversed
+		//detached node
+		Node rnode = reverseXY(nodeX,nodeY);
+		
+		beforeNode.next=rnode;
+		while (rnode!=nodeX)
+		rnode=rnode.next;
+
+		//has a segment after node
+		if (ptr!=null)	
+			rnode.next=ptr;
+		else //rnode is last segment
+			rnode.next=null;
+
+		tail=rnode;
+		head = dummy.next;
+	}
+	
+	private void swapNextandPrev(Node ptr) {
+		Node temp=ptr.prev;
+		ptr.prev=ptr.next;
+		ptr.next=temp;
+	}
+	
+	private void swapHeadTail() {
+		Node ptr=head;
+		head=tail;
+		tail=ptr;
+	}
+	
+	private void swapNodes(Node node1, Node node2) {
+		Node temp=node1;
+		node1=node2;
+		node2=temp;
+	}
+	
 	
 	public void printNode(Node node) {
 		System.out.print("Node:" + node.value);
@@ -247,5 +421,46 @@ public class DoublyLinkedList {
 		}
 		System.out.println("tail:" + tail.getValue());
 	}
+
+	public boolean isPalindrome() {
+		System.out.println("isPalindrome()");
+		if (length<=1) return true;
+		
+		Node hptr = head;
+		Node tptr = tail;
+		int i=0;
+		while ((hptr!=tptr) && (hptr.prev!=tptr)) {
+			if (hptr.getValue()!=tptr.getValue()) {
+				System.out.println("iterations: " + i);
+				return false;	
+			}
+			hptr=hptr.next;
+			tptr=tptr.prev;
+			i++;
+		}
+		System.out.println("iterations: " + i);
+		return true;
+	}
+	
+	 public boolean isPalindromeX() {
+	        if (length <= 1) return true;
+	        
+	        Node forwardNode = head;
+	        Node backwardNode = tail;
+	        int x=0;
+	        for (int i = 0; i < length / 2; i++) {
+	            if (forwardNode.value != backwardNode.value) {
+					System.out.println("iterations: " + i);
+					return false;	
+	            }
+	            forwardNode = forwardNode.next;
+	            backwardNode = backwardNode.prev;
+	            x++;
+	        }
+			System.out.println("iterations: " + x);
+	        return true;
+	    }
+
+
 	
 }

@@ -220,14 +220,78 @@ public class DoublyLinkedListTest {
 		dll.append(4);
 		dll.append(5);
 		dll.append(6);
-		dll.append(7);
+
 		dll.printNodes();
-		dll.printHead();
-		dll.printTail();
 		dll.reverse();
 		assertTrue(true);
 		dll.printNodes();
-		dll.printHead();
-		dll.printTail();
+	}
+	
+    /**
+     * ReverseXY() test
+     */
+	@Test
+	public void testDLLReverseXY() {
+		DoublyLinkedList dll = new DoublyLinkedList(1);
+		dll.append(2);
+		dll.append(3);
+		dll.append(4);
+		dll.append(5);
+		dll.append(6);
+
+		dll.printNodes();
+		Node nodeX = dll.get(0);
+		System.out.println("nodeX.val=" + nodeX.getValue());
+		
+		Node nodeY = dll.get(5);
+		System.out.println("nodeY.val=" + nodeY.getValue());
+		//dll.reverseXY(nodeX, nodeY);		
+		dll.reverseXYonce(nodeX, nodeY);
+		dll.printNodes();
+		assertTrue(true);
+	}
+	
+    /**
+     * isPalindrome() test
+     */
+	@Test
+	public void testDLLIsPalindrome() {
+		DoublyLinkedList dll = new DoublyLinkedList(0);
+		dll.append(2);
+		dll.append(3);
+		dll.append(4);
+		dll.append(5);
+		dll.append(6);
+		dll.append(9);
+		dll.append(10);
+		dll.append(9);
+		dll.append(6);
+		dll.append(5);
+		dll.append(4);
+		dll.append(3);
+		dll.append(2);
+		dll.append(0);
+		dll.printNodes();		
+		boolean isp = dll.isPalindrome();
+		System.out.println(isp);
+		assertTrue(isp);
+	}
+	
+    /**
+     * swapPairs() test
+     */
+	@Test
+	public void testDLLSwapPairs() {
+		DoublyLinkedList dll = new DoublyLinkedList(1);
+		dll.append(2);
+		dll.append(3);
+		dll.append(4);
+		dll.append(5);
+		dll.append(6);
+		dll.append(7);
+		dll.printNodes();		
+		dll.swapPairs();
+		dll.printNodes();		
+		assertTrue(true);
 	}
 }
