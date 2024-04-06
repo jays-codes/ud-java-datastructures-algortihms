@@ -66,4 +66,55 @@ public class LeetcodeStackTest {
         */
     }
 	
+	/**
+     * test Stack reverse String()()
+     */
+	@Test
+    public void testStackReverseStringA() {
+
+        String myString = "hello";
+        String reversedString = (new Stack()).reverseString(myString);
+        System.out.println(reversedString);
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            olleh
+        */
+    }
+	
+	/**
+     * test Stack reverse String()()
+     */
+	@Test
+    public void testStackReverseString() {
+
+        String myString = "hello";
+        String reversedString = (new Stack()).reverseString(myString);
+        System.out.println(reversedString);
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            olleh
+        */
+    }
+	
+	public String reverseString(String str) {
+		String reversed = "";
+		String letter;
+		
+		Stack myStack = new Stack();
+		
+		for (int i=0; i<str.length();i++){
+			letter=Character.toString(str.charAt(i));
+			myStack.push(letter);
+		}
+		
+		while (myStack.isEmpty()==false) {
+			reversed=reversed.concat(myStack.pop().toString());
+		}
+		
+		return reversed;
+	}
 }

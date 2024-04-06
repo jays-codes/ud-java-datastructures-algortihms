@@ -44,4 +44,20 @@ public class Stack<T> {
 			return node;
 		}
 	}
+	
+	public String reverseString(String str) {
+		String reversed = "";
+		String letter;
+		
+		for (int i=0; i<str.length();i++){
+			letter=Character.toString(str.charAt(i));
+			this.push((T) letter);
+		}
+		
+		while (isEmpty()==false) {
+			reversed=reversed.concat(this.pop().toString());
+		}
+		
+		return reversed;
+	}
 }
