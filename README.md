@@ -2,6 +2,7 @@
 Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
 proj: datastructures
+- jay's leetcode answer; Stack implemented via ArrayList; create push() to push generic type
 - Queue demo; enqueue(), dequeue(); unit tests 
 - Stack demo; print(), push(), pop(); unit tests
 - added jay's leetcode answer: DoubleLinkedList: [ADVANCED] swapPairs(); isPalindrome():boolean;
