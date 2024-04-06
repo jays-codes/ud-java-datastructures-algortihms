@@ -37,13 +37,10 @@ public class Stack<T> {
 	
 	public T pop() {
 		T node; 
-		int idx;
 		if (isEmpty()) {
 			return null;
 		} else {
-			idx=stackList.size() - 1;
-			node=stackList.get(idx);
-			stackList.remove(idx);
+			node=stackList.remove(stackList.size() - 1);
 			return node;
 		}
 	}
