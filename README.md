@@ -2,6 +2,7 @@
 Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
 proj: datastructures
+- Queue demo; enqueue(), dequeue(); unit tests 
 - Stack demo; print(), push(), pop(); unit tests
 - added jay's leetcode answer: DoubleLinkedList: [ADVANCED] swapPairs(); isPalindrome():boolean;
 - added jay's leetcode answer: DoubleLinkedList: [ADVANCED] reverse() - improved readability of DLL-reverse(); reverseXYonce(Node, Node); create reverse(Node, Node):Node that returns a reversed DETACHED node to facilitate fine grained node swapping;
