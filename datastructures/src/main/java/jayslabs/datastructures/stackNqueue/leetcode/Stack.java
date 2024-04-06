@@ -34,4 +34,17 @@ public class Stack<T> {
 	public void push(T node) {
 		stackList.add(node);
 	}    
+	
+	public T pop() {
+		T node; 
+		int idx;
+		if (isEmpty()) {
+			return null;
+		} else {
+			idx=stackList.size() - 1;
+			node=stackList.get(idx);
+			stackList.remove(idx);
+			return node;
+		}
+	}
 }
