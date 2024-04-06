@@ -14,12 +14,7 @@ public class Node {
 	public boolean equals(Object obj) {
 		return ((Node)obj).value==this.value;
 	}
-//	public int getValue() {
-//		return value;
-//	}
-//	public void setValue(int value) {
-//		this.value = value;
-//	}
+
 	public int getValue() {
 		return value;
 	}
