@@ -106,13 +106,18 @@ public class LeetcodeStackTest {
 		
 		Stack myStack = new Stack();
 		
-		for (int i=0; i<str.length();i++){
-			letter=Character.toString(str.charAt(i));
-			myStack.push(letter);
+		for (char c:str.toCharArray()) {
+			myStack.push(c);
 		}
 		
+//		for (int i=0; i<str.length();i++){
+//			letter=Character.toString(str.charAt(i));
+//			myStack.push(letter);
+//		}
+		
 		while (myStack.isEmpty()==false) {
-			reversed=reversed.concat(myStack.pop().toString());
+			reversed+=myStack.pop();
+			//reversed=reversed.concat(myStack.pop().toString());
 		}
 		
 		return reversed;
