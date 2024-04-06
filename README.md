@@ -2,6 +2,7 @@
 Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
 proj: datastructures
+- jay's leetcode answer; Stack implemented via ArrayList; create reverseArray(); use stackList to return reversed array
 - jay's leetcode answer; Stack implemented via ArrayList; create pop() to push generic type
 - jay's leetcode answer; Stack implemented via ArrayList; create push() to push generic type
 - Queue demo; enqueue(), dequeue(); unit tests 
