@@ -31,19 +31,15 @@ public class Stack<T> {
         return stackList.size();
     }
     
-	public void push(T node) {
-		stackList.add(node);
-	}    
-	
-	public T pop() {
-		T node; 
-		if (isEmpty()) {
-			return null;
-		} else {
-			node=stackList.remove(stackList.size() - 1);
-			return node;
-		}
-	}
+    public void push(T value) {
+        stackList.add(value);
+    }
+    
+    public T pop() {
+        if (isEmpty()) return null;
+        return stackList.remove(stackList.size() - 1);
+    }
+    
 	
 	public String reverseString(String str) {
 		String reversed = "";
@@ -60,4 +56,6 @@ public class Stack<T> {
 		
 		return reversed;
 	}
+
+
 }

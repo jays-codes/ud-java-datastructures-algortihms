@@ -100,26 +100,86 @@ public class LeetcodeStackTest {
         */
     }
 	
+	/**
+     * test Stack isBalancedParenthesis()()
+     */
+	@Test
+    public void testStackIsBalancedParenthesis() {
+
+        testAndPrint("()", true);
+        testAndPrint("()()", true);
+        testAndPrint("(())", true);
+        testAndPrint("()()()", true);
+        testAndPrint("(()())", true);
+        testAndPrint(")()(", false);
+        testAndPrint(")(", false);
+        testAndPrint("(()", false);
+        testAndPrint("))", false);
+        testAndPrint("(", false);
+        testAndPrint(")", false);
+    }	
+
+    public void testAndPrint(String testStr, boolean expected) {
+        // Run the test and store the result
+    	
+        boolean result = isBalancedParentheses(testStr);
+        
+        // Print the test string, expected result, and actual result
+        System.out.println("Test String: " + testStr);
+        System.out.println("EXPECTED: " + expected);
+        System.out.println("RESULT: " + result);
+        
+        // Check if the test passed or failed
+        if (result == expected) {
+            System.out.println("STATUS: PASS");
+        } else {
+            System.out.println("STATUS: FAIL");
+        }
+        
+        // Print a separator for better readability
+        System.out.println("--------------");
+    }	
+	
 	public String reverseString(String str) {
 		String reversed = "";
-		String letter;
 		
-		Stack myStack = new Stack();
+		Stack<Character> myStack = new Stack<Character>();
 		
 		for (char c:str.toCharArray()) {
 			myStack.push(c);
 		}
 		
-//		for (int i=0; i<str.length();i++){
-//			letter=Character.toString(str.charAt(i));
-//			myStack.push(letter);
-//		}
 		
 		while (myStack.isEmpty()==false) {
 			reversed+=myStack.pop();
-			//reversed=reversed.concat(myStack.pop().toString());
 		}
 		
 		return reversed;
 	}
+	
+	public boolean isBalancedParentheses(String testStr) {
+		if (testStr.isEmpty()) return true;
+		if (testStr.length()<=1) return false;
+		
+		boolean balanced = false;
+		Stack<Character> open = new Stack<Character>();
+		
+		char openCh='(';
+		char closedCh = ')';
+		for (char c:testStr.toCharArray()) {
+			if (c==openCh) {
+				open.push(c);
+				balanced=false;
+			} else if (c==closedCh) {
+				if (open.isEmpty()) return false;
+				if (((Character) open.peek()).charValue()==openCh) {
+					open.pop();
+					balanced=true;
+				} 
+			}
+		}
+		if (open.isEmpty()!=true) balanced = false;
+		
+		return balanced;
+	}	
 }
