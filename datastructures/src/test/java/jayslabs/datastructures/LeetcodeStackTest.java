@@ -2,6 +2,7 @@ package jayslabs.datastructures;
 
 import org.junit.Test;
 
+import jayslabs.datastructures.stackNqueue.leetcode.MyQueue;
 import jayslabs.datastructures.stackNqueue.leetcode.Stack;
 
 public class LeetcodeStackTest {
@@ -159,6 +160,36 @@ public class LeetcodeStackTest {
             5
 
         */
+    }	
+	
+	/**
+     * test Stacks enqueue
+     */
+	@Test
+    public void testStackEnqueue() {
+        // Create a new queue
+        MyQueue q = new MyQueue();
+
+        // Enqueue some values
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
+
+        // Output the front of the queue
+        System.out.println("Front of the queue: " + q.peek());
+
+        // Check if the queue is empty
+        System.out.println("Is the queue empty? " + q.isEmpty());
+
+
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            Front of the queue: 1
+            Is the queue empty? false
+
+        */
+
     }	
 	
 	public Stack<Integer> sortStack2(Stack<Integer> ints) {
