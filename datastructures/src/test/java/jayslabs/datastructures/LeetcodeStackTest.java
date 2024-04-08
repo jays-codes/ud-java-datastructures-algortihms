@@ -119,6 +119,93 @@ public class LeetcodeStackTest {
         testAndPrint(")", false);
     }	
 
+	Stack<Integer> stack;	
+	
+	/**
+     * test Stack sorting
+     */
+	@Test
+    public void testStackSorting() {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(3);
+        stack.push(2);
+        stack.push(5);
+        stack.push(1);
+        stack.push(4);
+      
+        System.out.println("Before sorting:");
+        stack.printStack();
+
+        stack=sortStack(stack);
+
+        System.out.println("\nAfter sorting:");
+        stack.printStack();
+ 
+        /*
+            EXPECTED OUTPUT:
+            ----------------
+            Before sorting:
+            4
+            1
+            5
+            2
+            3
+            
+            After sorting:
+            1
+            2
+            3
+            4
+            5
+
+        */
+    }	
+	
+	public Stack<Integer> sortStack2(Stack<Integer> ints) {
+		if (ints.size()<=1) return null;
+
+		Stack<Integer> sorted = new Stack<Integer>();
+		sorted.push(ints.pop());
+		
+		Integer num;
+		while (ints.isEmpty()==false) {
+			
+			if (ints.peek()<=sorted.peek()) {
+				sorted.push(ints.pop());				
+			} else {
+				num=ints.pop();
+				while (sorted.isEmpty()==false && num>sorted.peek()) {
+					ints.push(sorted.pop());
+				}
+				sorted.push(num);				
+			}
+		}
+		return sorted;
+	}
+	
+	public Stack<Integer> sortStack(Stack<Integer> ints) {
+		if (ints.size()<=1) return null;
+
+		Stack<Integer> sorted = new Stack<Integer>();
+		sorted.push(ints.pop());
+		
+		Integer num;
+		while (ints.isEmpty()==false) {
+			
+			if (ints.peek()<=sorted.peek()) {
+				sorted.push(ints.pop());				
+			} else {
+				num=ints.pop();
+				while (sorted.isEmpty()==false && num>sorted.peek()) {
+					ints.push(sorted.pop());
+				}
+				sorted.push(num);				
+			}
+		}
+		return sorted;
+	}	
+	
+	
     public void testAndPrint(String testStr, boolean expected) {
         // Run the test and store the result
     	
@@ -139,7 +226,9 @@ public class LeetcodeStackTest {
         // Print a separator for better readability
         System.out.println("--------------");
     }	
-	
+
+    
+    
 	public String reverseString(String str) {
 		String reversed = "";
 		

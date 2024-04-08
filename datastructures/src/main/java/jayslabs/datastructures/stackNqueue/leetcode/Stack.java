@@ -56,6 +56,29 @@ public class Stack<T> {
 		
 		return reversed;
 	}
+	
+	public void sortStack(Stack<Integer> ints) {
+		if (ints.size()<=1) return;
+
+		Integer num = ints.pop();
+		Stack<Integer> sorted = new Stack<Integer>();
+		sorted.push(num);
+		
+		while (ints.isEmpty()==false) {
+			num=ints.pop();
+			if (num<=sorted.peek()) {
+				sorted.push(num);				
+			} else {
+				for (int i=0;i<sorted.size() && num>sorted.peek();i++) {
+					ints.push(sorted.pop());						
+					
+					if (sorted.isEmpty() || num<=sorted.peek()) {
+						sorted.push(num);
+					}
+				}  
+			}
+		}
+	}
 
 
 }
