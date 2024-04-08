@@ -34,5 +34,11 @@ public class MyQueue {
 			
 		while (stack2.isEmpty()==false)
 				stack1.push(stack2.pop());
+	}
+
+
+	public Integer dequeue() {
+		if (stack1.isEmpty()) return null;
+		return stack1.pop();
 	}			
 }
