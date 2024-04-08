@@ -2,6 +2,7 @@
 Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
 proj: datastructures
+- jay's leetcode answer; implment dequeue() of a Queue implemented by 2 stacks
 - jay's leetcode answer; implment enqueue() of a Queue implemented by 2 stacks (FIFO using two stacks)
 - jay's leetcode answer; Stack sorting() using 1 input stack and an extra stack
 - jay's leetcode answer; evaluating String expression - implemented ParenthesisIsBalanced() 
