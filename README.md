@@ -2,6 +2,8 @@
 Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
 proj: datastructures
+- iterative solution for insert(); refactored to not accept nodes already in the tree; junit
+- added recursive solution for inserting node to a BST: insert(), findSpot(); recursive printing as well: printTree(), printNode(); 
 - Trees; BST class and node
 - jay's leetcode answer; implment dequeue() of a Queue implemented by 2 stacks
 - jay's leetcode answer; implment enqueue() of a Queue implemented by 2 stacks (FIFO using two stacks)
