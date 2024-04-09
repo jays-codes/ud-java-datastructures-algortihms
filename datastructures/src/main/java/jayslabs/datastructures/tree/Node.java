@@ -4,7 +4,7 @@ import jayslabs.datastructures.tree.Node;
 
 public class Node {
 
-	int value;
+	Integer value;
 	Node left;
 	Node right;
 
@@ -12,7 +12,7 @@ public class Node {
 		this.value = value;
 	}
 
-	public int getValue() {
+	public Integer getValue() {
 		return value;
 	}
 }
