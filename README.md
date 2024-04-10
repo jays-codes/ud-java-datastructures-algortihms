@@ -2,6 +2,7 @@
 Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
 proj: datastructures
+- jay's leetcode answer; HashTables: O(1) solution to firstNonRepeatingChar(String):char; LinkedHashMap; junit
 - jay's leetcode answer; HashTables: O(1) solution to findDuplicates(int[]):List; junit
 - jay's leetcode answer; O(1) solution to findCommonItems() in two arrays using HashMap
 - Hashtable: hash(), set(k,v), get(key):val, keys():ArrayList
