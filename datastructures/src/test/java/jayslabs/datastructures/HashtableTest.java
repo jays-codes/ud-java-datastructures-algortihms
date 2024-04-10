@@ -2,6 +2,8 @@ package jayslabs.datastructures;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.HashMap;
+
 import org.junit.Test;
 
 import jayslabs.datastructures.hashtable.HashTable;
@@ -120,5 +122,30 @@ public class HashtableTest {
         System.out.println("keys:" + ht.keys());
 		assertTrue(true);
 	}
+	
+	/**
+     * test Hashtable itemInCommon 
+     */
+	@Test
+	public void testHashTableItemsInCommon() {
+		
+		int[] arr1 = {1,4,67,3,65,90};
+		int[] arr2 = {7,5,9,23,43,21,67};
+		
+		boolean matchedpair = itemsInCommon(arr1, arr2);
+		
+		assertTrue(matchedpair);
+	}
 
+	public boolean itemsInCommon(int[] ar1, int[] ar2) {
+		HashMap<Integer, Boolean> hm = new HashMap<>();
+		
+		for (int i:ar1) {
+			hm.put(i, true);
+		}
+		for (int j:ar2) {
+			if (hm.get(j)!=null) return true;
+		}
+		return false;
+	}
 }
