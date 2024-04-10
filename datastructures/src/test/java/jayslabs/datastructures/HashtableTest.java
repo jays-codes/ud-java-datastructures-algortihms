@@ -2,7 +2,10 @@ package jayslabs.datastructures;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -136,7 +139,56 @@ public class HashtableTest {
 		
 		assertTrue(matchedpair);
 	}
+	
+	/**
+     * test Hashtable findDuplicates 
+     */
+	@Test
+	public void testHashTableFindDuplicates() {
+		
+		int[] arr1 = {1,4,67,3,65,90,7,5,9,90,90,90,23,43,21,67};
+		
+		List<Integer> dups = findDuplicates(arr1);
+		
+		System.out.println(dups);
+		assertTrue(true);
+	}	
 
+	public List<Integer> findDuplicates(int[] arr){
+		List<Integer> dups = new ArrayList<>();
+		
+		HashMap<Integer, Integer> hm = new HashMap<>();
+		
+		for (int i:arr) {
+			hm.put(i, hm.getOrDefault(i, 0) + 1);
+		}
+		
+		for (Map.Entry<Integer, Integer> entry : hm.entrySet()) {
+			if (entry.getValue()>1) {
+				dups.add(entry.getKey());
+			}
+		}
+		return dups;
+	}
+	
+	
+	public List<Integer> findDuplicatesX(int[] arr){
+		List<Integer> dups = new ArrayList<>();
+		
+		HashMap<Integer, Boolean> hm = new HashMap<>();
+		
+		for (int i:arr) {
+			if (hm.get(i)==null) {
+				hm.put(i, true);
+			} else {
+				if (dups.contains(i)==false)
+				dups.add(i);
+			}
+		}
+		
+		return dups;
+	}
+	
 	public boolean itemsInCommon(int[] ar1, int[] ar2) {
 		HashMap<Integer, Boolean> hm = new HashMap<>();
 		
