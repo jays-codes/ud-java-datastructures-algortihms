@@ -111,4 +111,17 @@ public class BST {
 			printNode("r",node.right, node.value);
 		} 
 	}
+
+	public boolean contains(int i) {
+		Node parent = root;
+		
+		while (parent!=null) {
+			if (i==parent.value) return true;
+			if (i < parent.value) 
+				parent=parent.left; 
+			else
+				parent=parent.right;		
+		}		
+		return false;
+	}
 }
