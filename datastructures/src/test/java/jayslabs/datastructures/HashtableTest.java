@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -153,6 +154,37 @@ public class HashtableTest {
 		System.out.println(dups);
 		assertTrue(true);
 	}	
+	
+	/**
+     * test Hashtable firstNonRepeatingCharacter 
+     */
+	@Test
+	public void testHashTablefirstNonRepeatingCharacter() {
+		
+        System.out.println(firstNonRepeatingChar("leetcode"));
+        System.out.println(firstNonRepeatingChar("hello"));
+        System.out.println(firstNonRepeatingChar("aabbcc"));
+		
+		assertTrue(true);
+	}	
+	
+	public Character firstNonRepeatingChar(String str) {
+		
+		if (str.isEmpty()) return null;
+		
+		LinkedHashMap<Character, Integer> hm = new LinkedHashMap<>();
+		
+		for (char ch:str.toCharArray()) {
+			hm.put(ch, hm.getOrDefault(ch, 0) + 1);
+		}
+		
+		for (char key : hm.keySet()) {
+			if (hm.get(key)==1) {
+				return key;
+			}
+		}
+		return null;
+	}
 
 	public List<Integer> findDuplicates(int[] arr){
 		List<Integer> dups = new ArrayList<>();
