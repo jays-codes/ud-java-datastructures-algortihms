@@ -2,6 +2,7 @@
 Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
 proj: datastructures
+- jay's leetcode answer; O(1) solution to findCommonItems() in two arrays using HashMap
 - Hashtable: hash(), set(k,v), get(key):val, keys():ArrayList
 - Section 14; HashTables; class, node, printTable(), unit test
 - BST; contains(Node):boolean
