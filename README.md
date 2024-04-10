@@ -2,6 +2,7 @@
 Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
 proj: datastructures
+- Hashtable: hash(), set(k,v), get(key):val, keys():ArrayList
 - Section 14; HashTables; class, node, printTable(), unit test
 - BST; contains(Node):boolean
 - iterative solution for insert(); refactored to not accept nodes already in the tree; junit
