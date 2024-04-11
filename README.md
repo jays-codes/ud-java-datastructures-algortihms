@@ -2,6 +2,7 @@
 Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
 proj: datastructures
+- isPalindrome(String); using char[]
 - Bubblesort; sort(int[])
 - Leetcode: Rotate array by k; O(n)
 - Leetcode: MakeChange problem solved iteratively with int[]; O(n)
