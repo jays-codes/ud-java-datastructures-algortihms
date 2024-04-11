@@ -9,7 +9,9 @@ public class Factorial {
 	}
 	
 	public static void main(String[] args) {
+		
 		int num = 8;
+
 		int facto = factorial(num);
 		
 		System.out.println("factorial of " + num + ": " + facto);
