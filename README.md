@@ -2,6 +2,7 @@
 Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
 proj: datastructures
+- Dynamic Programming: Memoization; fibonacci; Memoized Fibonacci O(2^n) -> O(n);
 - Recursion: factorial()
 - jay's leetcode answer; HashTables: O(1) solution to firstNonRepeatingChar(String):char; LinkedHashMap; junit
 - jay's leetcode answer; HashTables: O(1) solution to findDuplicates(int[]):List; junit
