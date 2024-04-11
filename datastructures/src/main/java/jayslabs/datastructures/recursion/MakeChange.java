@@ -1,7 +1,5 @@
 package jayslabs.datastructures.recursion;
 
-import java.util.HashMap;
-
 public class MakeChange {
 
 	public static void main(String[] args) {
