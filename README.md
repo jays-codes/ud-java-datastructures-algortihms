@@ -1,7 +1,10 @@
 # ud-java-datastructures-algortihms
-Jay's proj repo for Java Data Structures and Algorithms (conducted by S.Barrett - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
+Jay's repo for Java Data Structures and Algorithms (by S.Barrett, P.Singhal - Udemy). List below ARE NOT NOTES. They are topics covered as of latest.
 
-proj: datastructures
+proj: dsaps (P.Singhal)
+- project init
+
+proj: datastructures (S.Barrett)
 - isPalindrome(String); using char[]
 - Bubblesort; sort(int[])
 - Leetcode: Rotate array by k; O(n)
